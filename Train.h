@@ -1,31 +1,37 @@
 #ifndef TRAIN_H
 #define TRAIN_H
 
-#include <iostream>
 #include <string>
-#include <vector>
-#include <algorithm>
+#include <iostream>
 
 using namespace std;
 
-class TRAIN {
+class Train {
 private:
     string destination;
     int trainNumber;
-    string departureTime; // формат HH:MM
+    string departureTime;
 
 public:
-    TRAIN();
-    TRAIN(string destination, int trainNumber, string departureTime);
+    Train();
+    Train(const string& destination, int trainNumber, const string& departureTime);
+    Train(const Train& other);
+    ~Train();
 
-    // Методы доступа
     string getDestination() const;
-    int getTrainNumber() const;
-    string getDepartureTime() const;
+    void setDestination(const string& destination);
 
-    // Дружественные функции для ввода и вывода
-    friend ostream& operator<<(ostream& os, const TRAIN& train);
-    friend istream& operator>>(istream& is, TRAIN& train);
+    int getTrainNumber() const;
+    void setTrainNumber(int trainNumber);
+
+    string getDepartureTime() const;
+    void setDepartureTime(const string& departureTime);
+
+    bool operator>(const Train& other) const;
+    bool operator<(const Train& other) const;
+
+    friend ostream& operator<<(ostream& os, const Train& train);
+    friend istream& operator>>(istream& is, Train& train);
 };
 
 #endif
