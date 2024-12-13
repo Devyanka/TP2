@@ -5,7 +5,9 @@
 using namespace std;
 
 int main() {
-    string inputFileName = "input.txt"; // Имя файла для чтения
+    string inputFileName; // Имя файла для чтения
+    cout << "Enter name of file: ";
+    cin >> inputFileName;
     ifstream inputFile(inputFileName);
 
     if (!inputFile.is_open()) {
