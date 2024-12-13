@@ -1,4 +1,5 @@
 #include "Train.h"
+#include <limits>
 
 Train::Train() : destination(""), trainNumber(0), departureTime("00:00") {
     cout << "Default Train constructor called.\n";
