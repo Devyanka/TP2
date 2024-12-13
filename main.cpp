@@ -17,23 +17,23 @@ int main() {
         cin >> choice;
 
         switch (choice) {
-            case 1: {
+            case 1: { //Add
                 Train train;
                 cin >> train;
                 trainList.addTrain(train);
                 break;
             }
-            case 2:
+            case 2: //Print
                 trainList.printTrains();
                 break;
-            case 3: {
+            case 3: { //Search
                 string destination;
                 cout << "Enter destination: ";
                 cin >> destination;
                 trainList.findTrainsByDestination(destination);
                 break;
             }
-            case 4:
+            case 4: //Exit
                 cout << "Exiting...\n";
                 break;
             default:
